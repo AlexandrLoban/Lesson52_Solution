@@ -21,13 +21,14 @@ int get_group_index(double* avgs, int size) {
 	return max;
 }
 
-int get_best_group(int* group1, int* group2, int* group3, int size) {
-	double avg1 = get_average(group1, size);
-	double avg2 = get_average(group2, size);
-	double avg3 = get_average(group3, size);
+int get_best_group(int groups[DEFAULT_SIZE][DEFAULT_SIZE], int row, int column) {
+	double avgs[DEFAULT_SIZE]{};
 
-	double avgs[]{ avg1, avg2, avg3 };
-	int index = get_group_index(avgs, 3);
+	for (int i = 0; i < row; i++) {
+		avgs[i] = get_average(groups[i], column);
+	}
+
+	int index = get_group_index(avgs, row);
 
 	return index + 1;
 }

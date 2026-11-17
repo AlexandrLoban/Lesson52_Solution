@@ -3,12 +3,15 @@
 int main() {
 	const int SIZE = 5;
 
-	int group1[]{ 7, 8, 9, 10, 10 };
-	int group2[]{ 8, 8, 9, 10, 10 };
-	int group3[]{ 7, 8, 6, 10, 7 };
+	int groups[DEFAULT_SIZE][DEFAULT_SIZE]{ { 7, 8, 9, 10, 10 },
+	{ 8, 8, 9, 10, 10 },
+	{ 7, 8, 6, 10, 7 }
+	};
 
-	cout << "Best group --> " << get_best_group(group1, group2, group3, SIZE) << endl;
+	int group_number = 3;
+	int mark_number = 5;
 
+	cout << "Best group --> " << get_best_group(groups, group_number, mark_number) << endl;
 
 	return 0;
 }
